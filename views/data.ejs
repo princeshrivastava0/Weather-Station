@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+
+  <div class="output">
+    <div class="weather_title">
+      <h1>
+        <%= city %>
+          <%= country %>
+      </h1>
+      <span class="coordinates">
+        <p>Latitudes: <%= coordinates.latitude %>
+        </p>
+
+        &nbsp;
+        <hr />
+        &nbsp;
+        <p>Longitudes: <%= coordinates.longitude %>
+        </p>
+      </span>
+    </div>
+    <div class="weather_data">
+      <div class="main_data">
+        <span class="icon">
+          <img src="<%= description.icon %>" alt="icon" width="50%">
+        </span>
+        <h1>
+          <%= temp %>
+        </h1>
+        <span class="short-description">
+          <p>
+            <%= description.main_description %>
+          </p>
+        </span>
+      </div>
+      <hr class="border-2" />
+      <div class="other_data">
+        <span class="weather_description">
+          <h2>
+            <%= description.title %>
+          </h2>
+          <img src="<%= description.icon %>" alt="icon" width="25%">
+        </span>
+        <span class="real_feel">
+          <h4>Feels like:</h4>&nbsp;
+          <p>
+            <%= realFeel %>
+          </p>
+        </span>
+        <span class="humidity">
+          <h4>Humidity:</h4>&nbsp;
+          <p>
+            <%= humidity %>
+          </p>
+        </span>
+      </div>
+      <h3 class="date">
+        <%= date.day %>
+          <%= date.date %>
+            <%= date.month %>
+              <%= date.year %>
+      </h3>
+    </div>
+  </div>
+  <h6>Powered by Open Weather API</h6>
+  </div>
+
+  <%- include('partials/footer') %>

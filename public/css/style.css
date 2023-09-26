@@ -1,0 +1,671 @@
+/* Global CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Play", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../images/background.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/* Parent Container */
+.container {
+  height: 80%;
+  width: 80%;
+  background-color: rgba(128, 128, 128, 0.452);
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  box-shadow: rgb(100, 100, 111) 0px 7px 29px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1%;
+  position: relative;
+}
+
+/* Title */
+.container > h1 {
+  color: white;
+  position: absolute;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+  top: 5%;
+}
+
+/* Input + Output Containers */
+.input,
+.output {
+  height: 90%;
+  width: 50%;
+  border-radius: 20px;
+  padding: 1%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.1rem;
+}
+
+/* Input Form */
+form {
+  height: 8%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Submit Button */
+form > button {
+  height: 100% !important;
+  width: 20%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+  background-color: rgb(228 228 228 / 15%);
+  color: white;
+}
+
+
+form > button:hover {
+  color: black;
+}
+
+form > button:active {
+  transform: translateY(1px);
+}
+
+.input > hr {
+  width: 55%;
+  border: 5px solid rgba(255, 255, 255, 0.548);
+  border-radius: 20px;
+  margin: 1rem 0;
+}
+
+/* Input Text Element */
+.cityInput {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgb(228 228 228 / 15%);
+  font-size: 1.25rem;
+  color: white;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+.cityInput::placeholder {
+  color: whitesmoke;
+  font-size: 1rem;
+}
+
+/* Error */
+.error {
+  font-size: 1rem;
+  font-weight: 900;
+  position: relative;
+  top: 5%;
+}
+
+/* Border between Input & Output */
+.border {
+  border: 2px solid white;
+  height: 60%;
+  margin: auto 0;
+  border-radius: 10px;
+}
+
+/* output container */
+.output {
+  position: relative;
+}
+
+/* Home Page - Sun & Cloud Animation - Start */
+
+/* Sun Container */
+.sun {
+  position: absolute;
+  animation: sun 15s infinite linear;
+}
+
+/* Sun Animation */
+@keyframes sun {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cloud Container */
+.clouds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  height: 60%;
+}
+
+.cloud_1,
+.cloud_2 {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+}
+.cloud_1 {
+  left: 0;  
+  animation: cloud_1 2.5s linear infinite alternate;
+}
+
+/* Clouds Animation */
+@keyframes cloud_1 {
+  from {
+    left: -5%;
+    opacity: 0;
+  }
+  to {
+    left: 20%;
+    opacity: 1;
+  }
+}
+
+.cloud_2 {
+  right: 0;  
+  animation: cloud_2 2.5s linear infinite alternate;
+}
+
+@keyframes cloud_2 {
+  from {
+    right: -5%;
+    opacity: 0;
+  }
+  to {
+    right: 20%;
+    opacity: 1;
+  }
+}
+/* Home Page - Sun & Cloud Animation - Ends */
+
+/* Weather Data */
+
+/* City Name + Coordinates */
+.weather_title {
+  height: 10%;
+  width: 90%;
+  text-align: left;
+  position: absolute;
+  top: 21.5%;
+  margin: 0 5%;
+  border-radius: 15px;
+  padding: 1%;
+}
+
+/* Coordinates Container*/
+.coordinates {
+  display: flex;
+  margin-top: 1%;
+  font-weight: 900;
+}
+
+.coordinates > hr {
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+/* Weather Data Parent Container */
+.weather_data {
+  height: 50%;
+  width: 90%;
+  position: absolute;
+  bottom: 12%;
+  margin: 0 5%;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: rgb(255, 255, 255) 0px 0px 25px -10px;
+  border-radius: 15px;
+}
+
+/* Weather Data Container */
+.main_data,
+.other_data {
+  width: 50%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Border between main data and other data containers */
+.border-2 {
+  border: 2px solid white;
+  height: 60%;
+  margin: auto 0;
+  border-radius: 10px;
+}
+
+.main_data {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 10%;
+}
+
+.other_data {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  justify-content: center;
+}
+
+/* Weather-Icon */
+.icon {
+  text-align: center;
+  margin: -15% 0;
+}
+
+.weather_description {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 90%;
+  margin: 0 5%;
+  padding: 0 5%;
+}
+
+.real_feel,
+.humidity {
+  padding: 5%;
+  display: flex;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+  margin: 0 5%;
+}
+
+/* Current Day, Date & Month */
+.date {
+  position: absolute;
+  bottom: 5%;
+  font-weight: 900;
+}
+
+/* Footer API Credit - Open Weather API*/
+.container > h6 {
+  position: absolute;
+  bottom: 10%;
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 0.2rem;
+}
+
+/* Footer Container */
+.footer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: center !important;
+  letter-spacing: 0.1rem;
+  padding-bottom: 1%;  
+}
+
+/* Developer Name */
+.footer > h5 {
+  margin: 1% 0%;
+}
+
+.mobile-socials{
+  display: none;
+}
+
+/* Verical Mobile Display CSS - Max Width: 600px */
+@media screen and (max-width: 600px) {
+  body {
+    background: url("../images/background-mobile.png") cover no-repeat
+      center;
+  }
+
+  /* Parent Container */
+  .container {
+    height: 100%;
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;    
+  }
+
+  /* Title */
+  .container > h1 {
+    font-size: 2.5rem;   
+  }
+
+  /* Input + Output Containers */
+  .input,
+  .output {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+  }
+
+  /* Border between Input & Output */
+  .border {
+    display: none;
+  }
+
+/* Input Container */
+  .input {
+    justify-content: flex-start;
+  }
+
+  /* Weather Tagline */
+  .input > h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Input Form */
+  form {
+    width: 90%;
+    height: 10%;
+  }
+
+  /* Submit Button */
+  form > button {
+    height: 100%;
+    width: 20%;
+  }
+
+  .input > hr {
+    width: 90%;
+  }
+
+  /* Output Container */
+
+/* Home Page - Sun & Cloud Animation - Start */
+
+/* Sun Container */
+  .sun {
+    width: 600px;    
+  }
+
+  /* Cloud Container */
+  .clouds {    
+    width: 100vw;
+  }
+
+  /* Clouds Animation */
+  @keyframes cloud_1 {
+  from {
+    left: -30%;
+    opacity: 0;
+  }
+  to {
+    left: 15%;
+    opacity: 1;
+  }
+}
+
+@keyframes cloud_2 {
+  from {
+    right: -30%;
+    opacity: 0;
+  }
+  to {
+    right: 15%;
+    opacity: 1;
+  }
+}
+
+/* Home Page - Sun & Cloud Animation - Ends */
+
+/* Weather Data */
+
+  /* City Name + Coordinates */
+  .weather_title {
+    text-align: center;
+  }
+
+  /* Coordinates Container*/
+  .coordinates {    
+    width: 100%;    
+    margin-top: 5%;
+  }
+
+  .coordinates > p{
+    width: 50%;    
+    word-spacing: 100vw;
+    text-align: center;
+  }
+
+  .coordinates > hr {
+    border: 2px solid rgb(255, 255, 255);
+  }
+
+  /* Weather Data Parent Container */
+  .weather_data {    
+    bottom: 4%;
+  }
+
+  .real_feel,
+  .humidity {        
+    align-items: center;
+    text-align: left;
+  } 
+
+  /* Footer API Credit - Open Weather API*/
+  .container > h6 {
+    bottom: 22%;
+  }
+
+  /* Footer Container */
+  .footer {    
+    bottom: 2%;    
+  }
+ 
+  /* Large Social Media Icons */
+  .socials-large {
+    display: none !important;
+  }
+
+  /* Mobile Social Media Logos */
+  .mobile-socials {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 100vw;
+    margin-top: 2%;
+  }
+
+  .mobile-socials > span{       
+    width: 100%;
+    margin: 0 -2.5%;
+  }
+
+  .instagram, .linkedin, .github, .youtube{
+    width: 10%;
+  } 
+}
+
+
+/* Horizontal Mobile Display CSS - Min-Width: 601px and Max-Width: 1000px */
+@media screen and (max-width: 1000px) and (min-width: 601px) {
+  /* Large Social Media Icons */
+  .socials-large {
+    display: none !important;
+  }
+
+/* Title */
+.container > h1 {
+font-size: 2rem;  
+}
+
+/* Weather Tagline */
+.input > h2 {
+  font-size: 1rem;
+}
+
+/* Input Form */
+form {  
+  height: 15%;
+  width: 80%;
+}
+
+/* Output Container */
+
+/* Home Page - Sun & Cloud Animation - Start */
+
+/* Sun Container */
+.sun {
+  width: 400px;
+  }
+
+/* Cloud Container */
+.clouds {
+width: 100%;
+overflow: hidden;
+}
+
+.cloud_1,
+.cloud_2 {
+  width: 200px;
+}
+/* Cloud-1 Animation */
+.cloud_1{
+  animation: cloud_1 3.5s linear infinite alternate;
+}
+
+@keyframes cloud_1 {
+  from {
+    left: -50%;
+    opacity: 0;
+  }
+  to {
+    left: 20%;
+    opacity: 1;
+  }
+}
+
+/* Cloud-2 Animation */
+.cloud_2{
+  animation: cloud_2 3.5s linear infinite alternate;
+}
+
+@keyframes cloud_2 {
+  from {
+    right: -50%;
+    opacity: 0;
+  }
+  to {
+    right: 20%;
+    opacity: 1;
+  }
+}
+
+/* Home Page - Sun & Cloud Animation - Ends */
+
+/* Weather Data */
+
+/* City Name */
+.weather_title > h1{
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  top: -50% !important;
+}
+
+/* Coordinates Container */
+.coordinates {  
+  margin: 0 0.5%;
+  width: 100%;
+  position: relative;
+  top: -10%;
+}
+
+.coordinates > p{
+    width: 50%;    
+    word-spacing: 100vw;
+    text-align: center;    
+    font-size: 0.8rem;
+  }
+
+.coordinates > hr {
+  border: 2px solid white;       
+  width: 1%;   
+}
+
+/* Weather Data Parent Container */
+.weather_data {  
+  bottom: 8%;
+  font-size: 75%;
+}
+
+.main_data,
+.other_data, .border-2 {
+ position: relative;
+ bottom: 5%; 
+}
+
+.other_data {
+  text-align: left;
+  justify-content: center;    
+}
+
+/* Footer API Credit - Open Weather API*/
+.container > h6 {  
+  position: absolute;
+  left: 2.5%;
+  top: 80%;
+}
+
+/* Footer Container */
+.footer {  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;  
+}
+
+/* Developer Name */
+.footer > h5{  
+  width: 50%;
+  text-align: right;
+  font-size: 1rem;
+  margin-right: 2.5%;
+}
+
+/* Social-Media Icons */
+.mobile-socials{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  width: 50%;        
+  margin-left: 2.5%;
+}
+
+.mobile-socials > span{   
+  width: 100%;  
+  text-align: left;
+}
+
+.instagram, .linkedin, .github, .youtube{
+  width: 7.5%;  
+}
+}
