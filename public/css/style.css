@@ -383,7 +383,7 @@ form > button:active {
   /* Input Form */
   form {
     width: 90%;
-    height: 20%;
+    height: 10%;
   }
 
   /* Submit Button */
@@ -524,7 +524,7 @@ font-size: 2rem;
 
 /* Input Form */
 form {  
-  height: 20%;
+  height: 15%;
   width: 80%;
 }
 
